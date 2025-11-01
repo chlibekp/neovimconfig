@@ -11,7 +11,7 @@ vim.cmd("colorscheme unokai")
 
 require("core.lazy")
 
--- key bindings
+-- KEY BINDINGS
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>d", vim.cmd.Ex)
 
@@ -19,17 +19,26 @@ vim.keymap.set("n", "<leader>d", vim.cmd.Ex)
 vim.keymap.set("n", "<leader><Left>", ':bprevious<CR>', { noremap = true, silent = true })
 vim.keymap.set("n", "<leader><Right>", ':bnext<CR>', { noremap = true, silent = true })
 
--- Close current buffer
+-- Close current window 
 vim.keymap.set('n', '<leader>x', ':hide<CR>', { noremap = true, silent = true })
+
+-- Close current buffer
+-- vim.keymap.set('n', '<leader>xx', ':bdelete<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>xx', ':bnext | bd#<CR>', { silent = true, desc = 'Close current buffer' })
 
 -- New vertical split
 vim.keymap.set('n', '<leader>n', ':vsplit<CR>', { noremap = true, silent = true })
 
--- New horizontal split 
+-- New horizontal split
 vim.keymap.set('n', '<leader>nv', ':split<CR>', { noremap = true, silent = true })
 
 -- Open copilot chat
 vim.keymap.set('n', '<leader>chat', ':CopilotChatOpen<CR>', { noremap = true, silent = true })
+
+-- Explorer toggle
+vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
+
+-- END OF KEY BINDINGS
 
 local builtin = require('telescope.builtin')
 vim.keymap.set('n', '<leader>f', builtin.find_files, { desc = 'Telescope find files' })
