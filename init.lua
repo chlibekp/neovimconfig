@@ -4,10 +4,10 @@ vim.opt.nu = true -- numbers
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
-vim.opt.wrap = false
+vim.opt.wrap = true
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
-vim.cmd("colorscheme unokai") 
+vim.cmd("colorscheme default") 
 
 require("core.lazy")
 
@@ -26,7 +26,7 @@ vim.keymap.set('n', '<leader>x', ':hide<CR>', { noremap = true, silent = true })
 -- vim.keymap.set('n', '<leader>xx', ':bdelete<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<leader>xx', ':bnext | bd#<CR>', { silent = true, desc = 'Close current buffer' })
 
--- New vertical split
+-- New split
 vim.keymap.set('n', '<leader>n', ':vsplit<CR>', { noremap = true, silent = true })
 
 -- New horizontal split
