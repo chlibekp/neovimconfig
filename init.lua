@@ -11,9 +11,23 @@ vim.cmd("colorscheme default")
 
 require("core.lazy")
 
+-- readme
+-- <leader>g = explorer
+-- <leader>n = new vertical split
+-- <leader>nv = new horizontal split
+-- <leader>x = close current window
+-- <leader>xx = close current buffer
+-- <leader>f = find files (telescope)
+-- <leader>chat = open copilot chat
+-- <leader><Left> = previous buffer
+-- <leader><Right> = next buffer
+
 -- KEY BINDINGS
 vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>d", vim.cmd.Ex)
+
+-- Write
+vim.keymap.set("n", "<leader>w", ':write<CR>', { noremap = true, silent = true })
 
 -- Buffer navigation
 vim.keymap.set("n", "<leader><Left>", ':bprevious<CR>', { noremap = true, silent = true })
@@ -34,10 +48,6 @@ vim.keymap.set('n', '<leader>nv', ':split<CR>', { noremap = true, silent = true 
 
 -- Open copilot chat
 vim.keymap.set('n', '<leader>chat', ':CopilotChatOpen<CR>', { noremap = true, silent = true })
-
--- Explorer toggle
-vim.keymap.set("n", "<leader>e", ":NvimTreeToggle<CR>", { desc = "Toggle file explorer" })
-
 -- END OF KEY BINDINGS
 
 local builtin = require('telescope.builtin')
