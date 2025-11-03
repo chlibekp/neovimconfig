@@ -7,9 +7,10 @@ vim.opt.shiftwidth = 4
 vim.opt.wrap = true
 vim.opt.termguicolors = true
 vim.opt.scrolloff = 8
-vim.cmd("colorscheme default") 
 
 require("core.lazy")
+
+vim.cmd(":colorscheme tokyonight-night") 
 
 -- readme
 -- <leader>g = explorer
